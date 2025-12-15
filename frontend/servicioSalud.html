@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANA-PETS - Veterinaria en Panamá</title>
+    <link rel="stylesheet" href="css/servicioSalud.css">
+</head>
+<body>
+
+    <header>
+        <h1>PANA-PETS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios ▾</a>
+                    <ul class="submenu">
+                        <li><a href="servicioAtencion.html">Consulta Veterinaria</a></li>
+                        <li><a href="servicioEstetica.html">Estética Canina y Felina</a></li>
+                        <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
+                    </ul>
+                </li>
+                <li><a href="#citas">Citas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#productos">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="reserva-cita" id="citas">
+            <div class="descripcion">
+                <h2>Programa Integral de Inmunización</h2>
+            </div>
+            
+            <div class="reservaCita">
+                <h2>Reserva tu cita</h2>
+                <div class="formulario">
+                    <form>
+                        <div class="paso1">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (ej: 6000-0000)" pattern="[0-9]{4}-[0-9]{4}" title="El número debe tener 8 dígitos separados por un guion" required>
+                            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                            <textarea name="descripcion" id="descripcion" rows="5" placeholder="Servicio(s) que necesita" required></textarea>
+                            <button type="button" id="btnSiguiente">Siguiente</button>
+                        </div>
+                        
+                        <div class="paso2">
+                            <input type="text" id="tipoDeAnimal" name="tipoDeAnimal" placeholder="Qué animal es su mascota" required>
+                            <input type="text" id="nombreMascota" name="nombreMascota" placeholder="Nombre de su mascota" required>
+                            <input type="text" id="razonDeConsulta" name="razonDeConsulta" placeholder="Razón de la consulta" required>
+                            <textarea name="mensaje" id="mensaje" rows="5" placeholder="Mensaje adicional" required></textarea>
+
+                            <div class="botones-container">
+                                <button type="button" id="anteriorPaso">Anterior</button>
+                                <button type="submit" id="btnConfirmar">Confirmar Cita</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre-nosotros" id="estetica">
+            <div>
+                <h2>Programa Integral de Inmunización</h2>
+                <p>
+                    Nuestro Programa Integral de Inmunización está diseñado para proteger la salud de su mascota en cada etapa de su vida. Incluye la aplicación de vacunas esenciales y refuerzos,
+                    adaptados al calendario de salud específico de cada animal, garantizando una protección efectiva contra enfermedades comunes y prevenibles. <br><br>
+                    El servicio también contempla la desparasitación interna y externa, fundamental para prevenir infestaciones que pueden afectar la salud de la mascota y de su entorno. 
+                    Todo el proceso es realizado por personal veterinario capacitado, siguiendo protocolos seguros y utilizando productos certificados. <br><br>
+                    A través de un seguimiento responsable y personalizado, este programa contribuye a fortalecer el sistema inmunológico de su mascota, 
+                    prevenir complicaciones futuras y brindar tranquilidad a los dueños, asegurando una vida más sana, segura y prolongada.
+                </p>
+            </div>
+            
+            <div>
+                <img src="img/baño2.png" alt="Servicio de estética canina y felina premium">
+            </div>
+        </section>
+
+        <section class="servicios" id="servicios">
+            <h1>¿Qué incluye nuestro servicio?</h1>
+
+            <div class="servicio-estetica">
+                <img src="img/ServicioDeEstetica.png" alt="Servicio de estética para mascotas">
+                <h2>vacunas esenciales</h2>
+                <p>según la especie, edad y estilo de vida de la mascota.</p>
+            </div>
+
+            <div class="servicio-salud">
+                <img src="img/ServicioDeSalud.png" alt="Servicio de vacunación">
+                <h2>Refuerzos vacunales</h2>
+                <p>programados conforme al calendario de salud correspondiente.</p>
+                
+            </div>
+
+            <div class="servicio-atencion">
+                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <h2>Desparasitación interna</h2>
+                <p>para la prevención de parásitos intestinales.</p>
+                
+            </div>
+            
+            <div class="servicio-atencion">
+                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <h2>Desparasitación externa</h2>
+                <p>protegiendo contra pulgas, garrapatas y otros ectoparásitos.</p>
+                
+            </div>
+
+            <div class="servicio-atencion">
+                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <h2>Limpieza de oídos y glándulas</h2>
+                <p>ayudando a prevenir infecciones y molestias.</p>
+            </div>
+
+        </section>
+
+
+
+        <section class="contactanos">
+            <h2>¿Quieres que tu mascota esté en las mejores manos?</h2>
+            <a href="#contacto" class="boton-contacto">Contáctenos</a>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <h4>📞 Teléfono</h4>
+        <p>+507 6000-0000</p>
+        <h4>📍 Ubicación</h4>
+        <p>Vía Principal, Ciudad de Panamá</p>
+        <p class="pieDePagina">© 2025 PANA-PETS - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/pasos.js"></script>
+
+</body>
+</html>

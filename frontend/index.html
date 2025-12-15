@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANA-PETS - Veterinaria en Panamá</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header>
+        <h1>PANA-PETS</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios ▾</a>
+                    <ul class="submenu">
+                        <li><a href="servicioAtencion.html">Consulta Veterinaria</a></li>
+                        <li><a href="servicioEstetica.html">Estética Canina y Felina</a></li>
+                        <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
+                    </ul>
+                </li>
+                <li><a href="#citas">Citas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#productos">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reserva-cita" id="citas">
+            <div class="descripcion">
+                <h2>¡Bienvenido a PANA-PETS!</h2>
+                <p>Somos su clínica veterinaria de confianza en Panamá.</p>
+            </div>
+            
+            <div class="reservaCita">
+                <h2>Reserva tu cita</h2>
+                <div class="formulario">
+                    <form>
+                        <div class="paso1">
+                            <input type="text" id="nombre" placeholder="Nombre completo" required>
+                            <input type="tel" id="telefono" placeholder="Teléfono (ej: 6000-0000)" pattern="[0-9]{4}-[0-9]{4}" required>
+                            <input type="email" id="correo" placeholder="Correo electrónico" required>
+                            <textarea id="descripcion" rows="5" placeholder="Servicio(s) que necesita" required></textarea>
+                            <button type="button" id="btnSiguiente">Siguiente</button>
+                        </div>
+                        
+                        <div class="paso2">
+                            <input type="text" id="tipoDeAnimal" placeholder="Qué animal es su mascota" required>
+                            <input type="text" id="nombreMascota" placeholder="Nombre de su mascota" required>
+                            <input type="text" id="razonDeConsulta" placeholder="Razón de la consulta" required>
+                            <textarea id="mensaje" rows="5" placeholder="Mensaje adicional" required></textarea>
+
+                            <div class="botones-container">
+                                <button type="button" id="anteriorPaso">Anterior</button>
+                                <button type="submit">Confirmar Cita</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre-nosotros" id="nosotros">
+            <div>   
+                <h2>Cuidado con Corazón, Experiencia con Confianza</h2>
+                <p>
+                    En PANA-PETS somos un centro de medicina veterinaria dedicado al bienestar integral de tus mascotas. Contamos con un equipo profesional altamente capacitado, tecnología moderna y un enfoque humano que prioriza el bienestar, 
+                    comodidad y seguridad de cada animal que atendemos.
+                    Ofrecemos servicios que abarcan desde consultas generales, urgencias, vacunación y desparasitación, hasta peluquería, estética, cirugías menores y venta de productos especializados para el cuidado de tu compañero fiel.
+                    Nuestro compromiso es brindar atención médica confiable, diagnósticos precisos y un trato amable tanto para mascotas como para sus dueños, promoviendo una vida más sana, feliz y longeva.
+                </p>
+            </div>
+
+            <div>
+                <img src="img/Veterninaria.png" alt="Veterinaria atendiendo mascota">
+            </div>
+        </section>
+
+        <section class="servicios" id="servicios">
+            <h1>Servicios</h1>
+            <div class="servicio-estetica">
+                <img src="img/ServicioDeEstetica.png" alt="Servicio de estética para mascotas">
+                <h2>Estética Canina y Felina Premium</h2>
+                <p>Servicios completos de higiene que incluyen baño terapéutico con productos especializados, secado profesional, cepillado, corte de pelo personalizado y limpieza de oídos y glándulas.</p>
+                <a href="servicioEstetica.html" class="btn-servicio">Ver más</a>
+            </div>
+
+            <div class="servicio-salud">
+                <img src="img/ServicioDeSalud.png" alt="Servicio de vacunación">
+                <h2>Programa Integral de Inmunización</h2>
+                <p>Aplicación de vacunas esenciales y refuerzos adaptados al calendario de salud específico de su mascota, incluyendo desparasitación interna y externa.</p>
+                <a href="servicioSalud.html" class="btn-servicio">Ver más</a>
+            </div>
+
+            <div class="servicio-atencion">
+                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <h2>Consulta Veterinaria General y Diagnóstico</h2>
+                <p>Examen físico completo, asesoramiento nutricional y de comportamiento, y diagnóstico inicial de cualquier problema de salud. Incluye la emisión de un plan de tratamiento detallado.</p>
+                <a href="servicioAtencion.html" class="btn-servicio">Ver más</a>
+            </div>
+        </section>
+
+        <section class="mision-vision">
+            <div class="mision">
+                <h2>NUESTRA MISIÓN</h2>
+                <p>Brindar atención veterinaria integral con altos estándares profesionales, promoviendo el bienestar animal a través de servicios médicos, preventivos y estéticos que aseguren la salud, la tranquilidad y la confianza de cada familia que nos elige.</p>
+            </div>
+
+            <div class="vision">
+                <h2>NUESTRA VISIÓN</h2>
+                <p>Convertirnos en la clínica veterinaria líder de la región, reconocida por nuestra excelencia, innovación, ética profesional y compromiso con la salud animal, siendo siempre la primera opción para quienes buscan calidad, tecnología avanzada y un servicio excepcional.</p>
+            </div>
+        </section>
+
+        <section class="contactanos">
+            <h2>¿Quieres que tu mascota esté en las mejores manos?</h2>
+            <a href="#contacto" class="boton-contacto">Contáctenos</a>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h4>📞 Teléfono</h4>
+        <p>+507 6000-0000</p>
+        <h4>📍 Ubicación</h4>
+        <p>Vía Principal, Ciudad de Panamá</p>
+        <p class="pieDePagina">© 2025 PANA-PETS - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/pasos.js"></script>
+
+</body>
+</html>
