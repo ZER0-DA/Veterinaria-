@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Citas - PANA-PETS</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/misCitas.css">
+</head>
+<body>
+
+    <header>
+        <h1>PANA-PETS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios ▾</a>
+                    <ul class="submenu">
+                        <li><a href="servicioAtencion.html">Consulta Veterinaria</a></li>
+                        <li><a href="servicioEstetica.html">Estética Canina y Felina</a></li>
+                        <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
+                    </ul>
+                </li>
+                <li><a href="mis-citas.html">Mis Citas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#productos">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Mis Citas -->
+        <section class="mis-citas" id="mis-citas">
+            <h2>Consultar Mis Citas</h2>
+            
+            <!-- Formulario de búsqueda -->
+            <div class="buscar-citas">
+                <h3>Buscar mis citas</h3>
+                <form id="formBuscarCitas">
+                    <input type="email" id="buscarCorreo" placeholder="Correo electrónico" required>
+                    <input type="text" id="buscarCodigo" placeholder="Código de confirmación" required>
+                    <button type="submit">Buscar Citas</button>
+                </form>
+            </div>
+
+            <!-- Contenedor de resultados -->
+            <div id="resultadosCitas" class="resultados-citas" style="display: none;">
+                <h3>Tus Citas</h3>
+                <div id="listaCitas"></div>
+            </div>
+
+            <!-- Modal para editar cita -->
+            <div id="modalEditar" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Editar Cita</h3>
+                    <form id="formEditarCita">
+                        <input type="hidden" id="editarId">
+                        
+                        <label>Tipo de Animal:</label>
+                        <input type="text" id="editarTipoAnimal" required>
+                        
+                        <label>Nombre de la Mascota:</label>
+                        <input type="text" id="editarNombreMascota" required>
+                        
+                        <label>Razón de la Consulta:</label>
+                        <input type="text" id="editarRazonConsulta" required>
+                        
+                        <label>Mensaje:</label>
+                        <textarea id="editarMensaje" rows="3" required></textarea>
+                        
+                        <label>Fecha de la Cita:</label>
+                        <input type="date" id="editarFechaCita" required>
+                        
+                        <label>Hora de la Cita:</label>
+                        <input type="time" id="editarHoraCita" required>
+                        
+                        <div class="botones-modal">
+                            <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                            <button type="button" class="btn-cancelar-modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h4>📞 Teléfono</h4>
+        <p>+507 6000-0000</p>
+        <h4>📍 Ubicación</h4>
+        <p>Vía Principal, Ciudad de Panamá</p>
+        <p class="pieDePagina">© 2024 PANA-PETS - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/misCitas.js"></script>
+
+</body>
+</html>

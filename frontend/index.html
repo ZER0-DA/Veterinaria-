@@ -22,7 +22,7 @@
                         <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
                     </ul>
                 </li>
-                <li><a href="#citas">Citas</a></li>
+                <li><a href="mis-citas.html">Mis Citas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="#productos">Productos</a></li>
             </ul>
@@ -46,6 +46,7 @@
                             <input type="email" id="correo" placeholder="Correo electrónico" required>
                             <textarea id="descripcion" rows="5" placeholder="Servicio(s) que necesita" required></textarea>
                             <button type="button" id="btnSiguiente">Siguiente</button>
+
                         </div>
                         
                         <div class="paso2">
@@ -53,6 +54,9 @@
                             <input type="text" id="nombreMascota" placeholder="Nombre de su mascota" required>
                             <input type="text" id="razonDeConsulta" placeholder="Razón de la consulta" required>
                             <textarea id="mensaje" rows="5" placeholder="Mensaje adicional" required></textarea>
+
+                            <input type="date" id="fechaCita" placeholder="Fecha de la cita" required>
+                            <input type="time" id="horaCita" placeholder="Hora de la cita" required>
 
                             <div class="botones-container">
                                 <button type="button" id="anteriorPaso">Anterior</button>
