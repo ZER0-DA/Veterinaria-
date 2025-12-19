@@ -2,13 +2,16 @@ const express = require('express');
 const router = express.Router();
 const { executeQuery } = require('../db');
 
-// Función para generar código de confirmación único
+
 function generarCodigo() {
     return Math.random().toString(36).substring(2, 10).toUpperCase();
 }
 
-// ========== CREATE - Crear nueva cita ==========
+
 router.post('/', async (req, res) => {
+    console.log('=== INICIO DE PETICIÓN POST /api/citas ===');
+    console.log('Body recibido:', JSON.stringify(req.body, null, 2));
+    
     try {
         const {
             nombre, telefono, correo, descripcion,
@@ -16,17 +19,30 @@ router.post('/', async (req, res) => {
             mensaje, fecha_cita, hora_cita
         } = req.body;
 
-        // Validar que todos los campos estén presentes
-        if (!nombre || !telefono || !correo || !descripcion ||
-            !tipo_animal || !nombre_mascota || !razon_consulta ||
-            !mensaje || !fecha_cita || !hora_cita) {
+        const camposFaltantes = [];
+        if (!nombre) camposFaltantes.push('nombre');
+        if (!telefono) camposFaltantes.push('telefono');
+        if (!correo) camposFaltantes.push('correo');
+        if (!descripcion) camposFaltantes.push('descripcion');
+        if (!tipo_animal) camposFaltantes.push('tipo_animal');
+        if (!nombre_mascota) camposFaltantes.push('nombre_mascota');
+        if (!razon_consulta) camposFaltantes.push('razon_consulta');
+        if (!mensaje) camposFaltantes.push('mensaje');
+        if (!fecha_cita) camposFaltantes.push('fecha_cita');
+        if (!hora_cita) camposFaltantes.push('hora_cita');
+
+        if (camposFaltantes.length > 0) {
+            console.log('Campos faltantes:', camposFaltantes);
             return res.status(400).json({ 
-                error: 'Todos los campos son obligatorios' 
+                success: false,
+                error: 'Todos los campos son obligatorios',
+                camposFaltantes: camposFaltantes
             });
         }
 
-        // Generar código único
+
         const codigo = generarCodigo();
+        console.log('Código generado:', codigo);
 
         const query = `
             INSERT INTO citas (
@@ -36,11 +52,21 @@ router.post('/', async (req, res) => {
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
+        console.log('Ejecutando query...');
+        console.log('Parámetros:', [
+            nombre, telefono, correo, descripcion,
+            tipo_animal, nombre_mascota, razon_consulta,
+            mensaje, fecha_cita, hora_cita, codigo
+        ]);
+
         const result = await executeQuery(query, [
             nombre, telefono, correo, descripcion,
             tipo_animal, nombre_mascota, razon_consulta,
             mensaje, fecha_cita, hora_cita, codigo
         ]);
+
+        console.log('✓ Query ejecutada exitosamente');
+        console.log('Resultado:', result);
 
         res.status(201).json({
             success: true,
@@ -49,21 +75,30 @@ router.post('/', async (req, res) => {
             id: result.insertId
         });
 
+        console.log('=== FIN DE PETICIÓN POST /api/citas ===\n');
+
     } catch (error) {
-        console.error('Error al crear cita:', error);
+        console.error(' ERROR al crear cita:');
+        console.error('Mensaje:', error.message);
+        console.error('Stack:', error.stack);
+        console.error('Código SQL:', error.code);
+        console.error('SQL State:', error.sqlState);
+        
         res.status(500).json({ 
-            error: 'Error al crear la cita' 
+            success: false,
+            error: 'Error al crear la cita',
+            detalles: error.message
         });
     }
 });
 
-// ========== READ - Obtener citas por correo y código ==========
 router.get('/buscar', async (req, res) => {
     try {
         const { correo, codigo } = req.query;
 
         if (!correo || !codigo) {
             return res.status(400).json({ 
+                success: false,
                 error: 'Correo y código son obligatorios' 
             });
         }
@@ -78,6 +113,7 @@ router.get('/buscar', async (req, res) => {
 
         if (citas.length === 0) {
             return res.status(404).json({ 
+                success: false,
                 error: 'No se encontraron citas con esos datos' 
             });
         }
@@ -90,12 +126,13 @@ router.get('/buscar', async (req, res) => {
     } catch (error) {
         console.error('Error al buscar citas:', error);
         res.status(500).json({ 
-            error: 'Error al buscar las citas' 
+            success: false,
+            error: 'Error al buscar las citas',
+            detalles: error.message
         });
     }
 });
 
-// ========== READ - Obtener una cita específica por ID ==========
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -105,6 +142,7 @@ router.get('/:id', async (req, res) => {
 
         if (citas.length === 0) {
             return res.status(404).json({ 
+                success: false,
                 error: 'Cita no encontrada' 
             });
         }
@@ -117,12 +155,13 @@ router.get('/:id', async (req, res) => {
     } catch (error) {
         console.error('Error al obtener cita:', error);
         res.status(500).json({ 
-            error: 'Error al obtener la cita' 
+            success: false,
+            error: 'Error al obtener la cita',
+            detalles: error.message
         });
     }
 });
 
-// ========== UPDATE - Actualizar cita ==========
 router.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -131,7 +170,6 @@ router.put('/:id', async (req, res) => {
             mensaje, tipo_animal, nombre_mascota
         } = req.body;
 
-        // Verificar que la cita existe
         const citaExiste = await executeQuery(
             'SELECT id FROM citas WHERE id = ?', 
             [id]
@@ -139,6 +177,7 @@ router.put('/:id', async (req, res) => {
 
         if (citaExiste.length === 0) {
             return res.status(404).json({ 
+                success: false,
                 error: 'Cita no encontrada' 
             });
         }
@@ -164,12 +203,13 @@ router.put('/:id', async (req, res) => {
     } catch (error) {
         console.error('Error al actualizar cita:', error);
         res.status(500).json({ 
-            error: 'Error al actualizar la cita' 
+            success: false,
+            error: 'Error al actualizar la cita',
+            detalles: error.message
         });
     }
 });
 
-// ========== DELETE - Cancelar cita (cambiar estado) ==========
 router.patch('/:id/cancelar', async (req, res) => {
     try {
         const { id } = req.params;
@@ -184,6 +224,7 @@ router.patch('/:id/cancelar', async (req, res) => {
 
         if (result.affectedRows === 0) {
             return res.status(404).json({ 
+                success: false,
                 error: 'Cita no encontrada' 
             });
         }
@@ -196,12 +237,14 @@ router.patch('/:id/cancelar', async (req, res) => {
     } catch (error) {
         console.error('Error al cancelar cita:', error);
         res.status(500).json({ 
-            error: 'Error al cancelar la cita' 
+            success: false,
+            error: 'Error al cancelar la cita',
+            detalles: error.message
         });
     }
 });
 
-// ========== DELETE - Eliminar cita permanentemente ==========
+
 router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -211,6 +254,7 @@ router.delete('/:id', async (req, res) => {
 
         if (result.affectedRows === 0) {
             return res.status(404).json({ 
+                success: false,
                 error: 'Cita no encontrada' 
             });
         }
@@ -223,7 +267,9 @@ router.delete('/:id', async (req, res) => {
     } catch (error) {
         console.error('Error al eliminar cita:', error);
         res.status(500).json({ 
-            error: 'Error al eliminar la cita' 
+            success: false,
+            error: 'Error al eliminar la cita',
+            detalles: error.message
         });
     }
 });

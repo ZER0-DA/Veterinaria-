@@ -10,11 +10,16 @@
 <body>
 
     <header>
-        <h1>PANA-PETS</h1>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="img/logo22.png" alt="PANA-PETS Logo" class="logo">
+            <h1>PANA-PETS</h1>
+        </div>
+        
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="sobre-nosotros.html">Nosotros</a></li>
                 <li class="dropdown">
                     <a href="#servicios">Servicios ▾</a>
                     <ul class="submenu">
@@ -24,18 +29,72 @@
                     </ul>
                 </li>
                 <li><a href="mis-citas.html">Mis Citas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#productos">Productos</a></li>
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos-perros.html">Para Perros</a></li>
+                        <li><a href="productos-gatos.html">Para Gatos</a></li>
+                    </ul>
+                </li>
+        
+                <li class="search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar..." id="searchInput">
+                        <button type="button" onclick="realizarBusqueda()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <main>
-        <!-- Sección Mis Citas -->
+        <section class="reserva-cita" id="citas">
+            <div class="descripcion">
+                <h2>Reserva tú cita</h2>
+    
+            </div>
+            
+            <div class="reservaCita">
+                <h2>Reserva tu cita</h2>
+                <div class="formulario">
+                    <form>
+                        <div class="paso1">
+                            <input type="text" id="nombre" placeholder="Nombre completo" required>
+                            <input type="tel" id="telefono" placeholder="Teléfono (ej: 6000-0000)" pattern="[0-9]{4}-[0-9]{4}" required>
+                            <input type="email" id="correo" placeholder="Correo electrónico" required>
+                            <textarea id="descripcion" rows="5" placeholder="Servicio(s) que necesita" required></textarea>
+                            <button type="button" id="btnSiguiente">Siguiente</button>
+
+                        </div>
+                        
+                        <div class="paso2">
+                            <input type="text" id="tipoDeAnimal" placeholder="Qué animal es su mascota" required>
+                            <input type="text" id="nombreMascota" placeholder="Nombre de su mascota" required>
+                            <input type="text" id="razonDeConsulta" placeholder="Razón de la consulta" required>
+                            <textarea id="mensaje" rows="5" placeholder="Mensaje adicional" required></textarea>
+
+                            <input type="date" id="fechaCita" placeholder="Fecha de la cita" required>
+                            <input type="time" id="horaCita" placeholder="Hora de la cita" required>
+
+                            <div class="botones-container">
+                                <button type="button" id="anteriorPaso">Anterior</button>
+                                <button type="submit">Confirmar Cita</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="mis-citas" id="mis-citas">
             <h2>Consultar Mis Citas</h2>
             
-            <!-- Formulario de búsqueda -->
             <div class="buscar-citas">
                 <h3>Buscar mis citas</h3>
                 <form id="formBuscarCitas">
@@ -45,13 +104,11 @@
                 </form>
             </div>
 
-            <!-- Contenedor de resultados -->
             <div id="resultadosCitas" class="resultados-citas" style="display: none;">
                 <h3>Tus Citas</h3>
                 <div id="listaCitas"></div>
             </div>
 
-            <!-- Modal para editar cita -->
             <div id="modalEditar" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -94,7 +151,8 @@
         <p>Vía Principal, Ciudad de Panamá</p>
         <p class="pieDePagina">© 2024 PANA-PETS - Todos los derechos reservados</p>
     </footer>
-
+    
+    <script src="js/pasos.js"></script>
     <script src="js/misCitas.js"></script>
 
 </body>

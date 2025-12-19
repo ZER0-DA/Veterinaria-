@@ -1,0 +1,736 @@
+/* Estilos para Productos de Gatos - PANA-PETS */
+
+.main-productos-gatos {
+    background: white;
+}
+
+/* Hero Section */
+.hero-productos {
+    background: linear-gradient(135deg, #030f44 0%, #520606 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-productos::before {
+    content: '🐈';
+    position: absolute;
+    font-size: 20rem;
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.95;
+}
+
+/* Categorías */
+.categorias-gatos {
+    padding: 4rem 8vw;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.categorias-gatos h2 {
+    text-align: center;
+    color: #030f44;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.categoria-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.categoria-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.categoria-card:hover .categoria-icon,
+.categoria-card:hover h3 {
+    color: white;
+}
+
+.categoria-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.categoria-card h3 {
+    color: #030f44;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Separadores */
+.separador {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+    margin: 4rem 8vw;
+}
+
+/* Sección de Productos */
+.seccion-productos {
+    padding: 4rem 8vw;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.titulo-seccion h2 {
+    color: #030f44;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.titulo-seccion p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Grid de Productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Tarjeta de Producto */
+.producto-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border-color: #667eea;
+}
+
+.producto-imagen {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.producto-card:hover .producto-imagen img {
+    transform: scale(1.1);
+}
+
+/* Badges */
+.badge-nuevo,
+.badge-oferta,
+.badge-popular {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.badge-nuevo {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    color: white;
+}
+
+.badge-oferta {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+}
+
+.badge-popular {
+    background: linear-gradient(135deg, #ffd93d 0%, #f39c12 100%);
+    color: white;
+}
+
+/* Información del Producto */
+.producto-info {
+    padding: 2rem;
+}
+
+.producto-info h3 {
+    color: #030f44;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.caracteristicas li {
+    color: #666;
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+}
+
+/* Precios */
+.precio-container {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.precio-anterior {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.precio {
+    color: #030f44;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* Botón Comprar */
+.btn-comprar {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4b0000ce 0%, #04083f 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-comprar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-comprar:active {
+    transform: translateY(0);
+}
+
+/* Call to Action */
+.cta-productos {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #030f44 0%, #520606 100%);
+    text-align: center;
+    color: white;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.btn-contacto {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: white;
+    color: #030f44;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.btn-contacto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* ========== ESTILOS DEL MODAL ========== */
+
+/* Modal Mejorado - Productos Gatos */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 15, 68, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    padding: 0;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    max-height: 90vh;
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header del Modal */
+.modal-content h2 {
+    margin: 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #030f44 0%, #520606 100%);
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    border-radius: 25px 25px 0 0;
+    position: relative;
+}
+
+.modal-content h2::before {
+    content: '🛒';
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Botón Cerrar */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.close:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Cuerpo del Modal */
+#modalBody {
+    padding: 2rem;
+    max-height: calc(90vh - 140px);
+    overflow-y: auto;
+}
+
+/* Información del Producto */
+#modalBody > p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+#modalBody > p strong {
+    color: #030f44;
+    font-size: 1.1rem;
+}
+
+#modalBody > p span {
+    color: #520606;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Formulario */
+#compraForm {
+    margin-top: 1.5rem;
+}
+
+#compraForm label {
+    display: block;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #030f44;
+    font-size: 1rem;
+}
+
+#compraForm label::before {
+    content: '•';
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+#compraForm input,
+#compraForm textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+#compraForm input:focus,
+#compraForm textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+#compraForm textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Campo Cantidad */
+#cantidad {
+    width: 120px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Total */
+.total {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 15px rgba(252, 182, 159, 0.3);
+}
+
+.total strong {
+    color: #030f44;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.total span {
+    color: #520606;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* Botón Confirmar */
+#compraForm button[type="submit"] {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #4b0000ce 0%, #04083f 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+#compraForm button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+#compraForm button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Modal de Éxito */
+#successModal .modal-content {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+#successModal h2 {
+    background: none;
+    color: #00b894;
+    font-size: 2rem;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+#successModal h2::before {
+    content: '✓';
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem auto;
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    line-height: 80px;
+    box-shadow: 0 10px 30px rgba(0, 184, 148, 0.3);
+}
+
+#successModal p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+#closeSuccess {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#closeSuccess:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 184, 148, 0.3);
+}
+
+/* Scrollbar personalizado para el modal */
+#modalBody::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modalBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#modalBody::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+#modalBody::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .categorias-gatos,
+    .seccion-productos {
+        padding: 3rem 5vw;
+    }
+
+    .grid-categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 2rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    /* Modal Responsive */
+    .modal-content {
+        width: 95%;
+        max-width: none;
+        border-radius: 20px;
+    }
+
+    .modal-content h2 {
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .modal-content h2::before {
+        font-size: 2.5rem;
+    }
+
+    #modalBody {
+        padding: 1.5rem;
+    }
+
+    .close {
+        right: 15px;
+        top: 15px;
+        font-size: 24px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .total span {
+        font-size: 1.8rem;
+    }
+
+    #compraForm button[type="submit"] {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .producto-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .precio {
+        font-size: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Modal Mobile */
+    .modal-content h2 {
+        font-size: 1.3rem;
+        padding: 1.2rem;
+    }
+
+    #modalBody {
+        padding: 1rem;
+    }
+
+    #compraForm input,
+    #compraForm textarea {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .total {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+    }
+
+    .total span {
+        font-size: 1.6rem;
+    }
+}

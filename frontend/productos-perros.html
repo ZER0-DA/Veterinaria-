@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos para Perros - PANA-PETS</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/prodcutos-perros.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="img/logo22.png" alt="PANA-PETS Logo" class="logo">
+            <h1>PANA-PETS</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios ▾</a>
+                    <ul class="submenu">
+                        <li><a href="servicioAtencion.html">Consulta Veterinaria</a></li>
+                        <li><a href="servicioEstetica.html">Estética Canina y Felina</a></li>
+                        <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
+                    </ul>
+                </li>
+                <li><a href="mis-citas.html">Mis Citas</a></li>
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos-perros.html">Para Perros</a></li>
+                        <li><a href="productos-gatos.html">Para Gatos</a></li>
+                    </ul>
+                </li>
+                
+                <li class="search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar..." id="searchInput">
+                        <button type="button" onclick="realizarBusqueda()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="main-productos-perros">
+
+        <section class="hero-productos">
+            <div class="hero-content">
+                <h1>Productos para Perros</h1>
+                <p>Todo lo que tu mejor amigo necesita</p>
+            </div>
+        </section>
+
+        <section class="categorias-perros">
+            <h2>Explora Nuestras Categorías</h2>
+            <div class="grid-categorias">
+                <a href="#camas" class="categoria-link">
+                    <div class="categoria-card">
+                        <span class="categoria-icon">🛏️</span>
+                        <h3>Camas</h3>
+                    </div>
+                </a>
+                <a href="#higiene" class="categoria-link">
+                    <div class="categoria-card">
+                        <span class="categoria-icon">🧼</span>
+                        <h3>Higiene</h3>
+                    </div>
+                </a>
+                <a href="#belleza" class="categoria-link">
+                    <div class="categoria-card">
+                        <span class="categoria-icon">✨</span>
+                        <h3>Belleza</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" id="camas">
+            <div class="titulo-seccion">
+                <h2>Camas para Perros</h2>
+                <p>Comodidad y descanso de calidad para tu mascota</p>
+            </div>
+
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/camaOropedica" alt="Cama ortopédica para perro grande con memory foam">
+                        <span class="badge-nuevo">NUEVO</span>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cama Ortopédica Premium</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Memory foam de alta densidad</li>
+                            <li>✓ Funda lavable</li>
+                            <li>✓ Tamaño: Grande (90x70cm)</li>
+                            <li>✓ Antideslizante</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$89.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/camaRedonda2" alt="Cama acolchada redonda para perros pequeños">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cama Acolchada Redonda</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Diseño tipo dona</li>
+                            <li>✓ Super suave</li>
+                            <li>✓ Tamaño: Mediano (60cm)</li>
+                            <li>✓ Colores variados</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$45.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/camaElevada" alt="Cama elevada para perros con estructura de metal">
+                        <span class="badge-oferta">OFERTA</span>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cama Elevada Ventilada</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Estructura metálica</li>
+                            <li>✓ Malla transpirable</li>
+                            <li>✓ Ideal para exteriores</li>
+                            <li>✓ Fácil limpieza</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio-anterior">$65.00</span>
+                            <span class="precio">$52.00</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" id="higiene">
+            <div class="titulo-seccion">
+                <h2>Higiene y Cuidado</h2>
+                <p>Mantén a tu perro limpio y saludable</p>
+            </div>
+
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/shampo1" alt="Shampoo hipoalergénico para perros con piel sensible">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Shampoo Hipoalergénico</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Para piel sensible</li>
+                            <li>✓ Sin parabenos</li>
+                            <li>✓ Aroma suave</li>
+                            <li>✓ 500ml</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$18.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/cepilloCortador" alt="Cepillo para desenredar pelo de perros de pelo largo">
+                        <span class="badge-popular">POPULAR</span>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cepillo Desenredante Pro</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Cerdas suaves</li>
+                            <li>✓ Para pelo largo y corto</li>
+                            <li>✓ Mango ergonómico</li>
+                            <li>✓ Reduce caída de pelo</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$24.99</span>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/toallitas" alt="Toallitas húmedas para limpieza rápida de perros">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Toallitas Húmedas (Pack 80)</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Limpieza rápida</li>
+                            <li>✓ Con aloe vera</li>
+                            <li>✓ Biodegradables</li>
+                            <li>✓ Sin alcohol</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$12.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/cortaUñas" alt="Cortauñas profesional para perros con protección">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cortauñas Profesional</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Acero inoxidable</li>
+                            <li>✓ Corte preciso</li>
+                            <li>✓ Con protección</li>
+                            <li>✓ Mango antideslizante</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$16.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" id="belleza">
+            <div class="titulo-seccion">
+                <h2>Belleza y Estilo</h2>
+                <p>Productos profesionales para el cuidado estético</p>
+            </div>
+
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/perfume" alt="Perfume para perros con aroma fresco y duradero">
+                        <span class="badge-nuevo">NUEVO</span>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Perfume Canino Premium</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Aroma fresco</li>
+                            <li>✓ Larga duración</li>
+                            <li>✓ Hipoalergénico</li>
+                            <li>✓ 120ml</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$22.99</span>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/acondicionador" alt="Acondicionador nutritivo para pelo brillante de perros">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Acondicionador Nutritivo</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Pelo brillante</li>
+                            <li>✓ Con vitaminas</li>
+                            <li>✓ Desenreda fácilmente</li>
+                            <li>✓ 400ml</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$19.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/kit" alt="Kit completo de peluquería canina profesional">
+                        <span class="badge-oferta">OFERTA</span>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Kit Peluquería Completo</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Tijeras profesionales</li>
+                            <li>✓ Maquinilla recargable</li>
+                            <li>✓ Peines variados</li>
+                            <li>✓ Estuche incluido</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio-anterior">$120.00</span>
+                            <span class="precio">$89.99</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</section>
+        <section class="cta-productos">
+            <div class="cta-content">
+                <h2>¿Necesitas Asesoría?</h2>
+                <p>Nuestros expertos están listos para ayudarte a elegir los mejores productos para tu perro</p>
+                <a href="mis-citas.html" class="btn-contacto">Contáctanos</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <h4>📞 Teléfono</h4>
+        <p>+507 6000-0000</p>
+        <h4>📍 Ubicación</h4>
+        <p>Vía Principal, Ciudad de Panamá</p>
+        <p class="pieDePagina">© 2025 PANA-PETS - Todos los derechos reservados</p>
+    </footer>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - PANA-PETS</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sobre-nosotros.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="img/logo22.png" alt="PANA-PETS Logo" class="logo">
+            <h1>PANA-PETS</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios ▾</a>
+                    <ul class="submenu">
+                        <li><a href="servicioAtencion.html">Consulta Veterinaria</a></li>
+                        <li><a href="servicioEstetica.html">Estética Canina y Felina</a></li>
+                        <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
+                    </ul>
+                </li>
+                <li><a href="mis-citas.html">Mis Citas</a></li>
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos-perros.html">Para Perros</a></li>
+                        <li><a href="productos-gatos.html">Para Gatos</a></li>
+                    </ul>
+                </li>
+            
+                <li class="search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar..." id="searchInput">
+                        <button type="button" onclick="realizarBusqueda()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="main-sobre-nosotros">
+        
+        <!-- Hero Section -->
+        <section class="hero-nosotros">
+            <div class="hero-content">
+                <h1>Sobre PANA-PETS</h1>
+                <p>Cuidado con Corazón, Experiencia con Confianza</p>
+            </div>
+        </section>
+
+        <section class="seccion-quienes-somos">
+            <div class="contenedor-texto">
+                <h2>¿Quiénes Somos?</h2>
+                <p>
+                    En PANA-PETS somos un centro veterinario comprometido con el cuidado integral de la salud y el bienestar de las mascotas. 
+                    Trabajamos con un enfoque humano y profesional, entendiendo que cada animal es un miembro importante de la familia. 
+                    Nuestro objetivo es brindar tranquilidad a los dueños y una atención de calidad a cada paciente.
+                </p>
+            </div>
+            <div class="contenedor-imagen">
+                <img src="img/nosotros.png" alt="Equipo PANA-PETS">
+            </div>
+        </section>
+
+        <section class="seccion-mision-vision">
+            <div class="mision-card">
+                <div class="icon">🎯</div>
+                <h2>Nuestra Misión</h2>
+                <p>
+                    Brindar atención veterinaria integral con altos estándares profesionales, promoviendo el bienestar animal 
+                    a través de servicios médicos, preventivos y estéticos que aseguren la salud, la tranquilidad y la confianza 
+                    de cada familia que nos elige.
+                </p>
+            </div>
+            <div class="vision-card">
+                <div class="icon">🔭</div>
+                <h2>Nuestra Visión</h2>
+                <p>
+                    Convertirnos en la clínica veterinaria líder de la región, reconocida por nuestra excelencia, innovación, 
+                    ética profesional y compromiso con la salud animal, siendo siempre la primera opción para quienes buscan 
+                    calidad, tecnología avanzada y un servicio excepcional.
+                </p>
+            </div>
+        </section>
+
+        <section class="seccion-valores">
+            <h2>Nuestros Valores</h2>
+            <div class="grid-valores">
+                <div class="valor-card">
+                    <div class="valor-icon">❤️</div>
+                    <h3>Amor y Respeto</h3>
+                    <p>Tratamos a cada mascota con cuidado, paciencia y empatía.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">⚕️</div>
+                    <h3>Profesionalismo</h3>
+                    <p>Atención basada en conocimientos actualizados y buenas prácticas veterinarias.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">🤝</div>
+                    <h3>Responsabilidad y Ética</h3>
+                    <p>Actuamos con honestidad y compromiso en cada servicio.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">🧼</div>
+                    <h3>Higiene y Seguridad</h3>
+                    <p>Cumplimos con altos estándares de limpieza y protocolos de atención.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">⭐</div>
+                    <h3>Compromiso con la Calidad</h3>
+                    <p>Mejora continua en nuestros servicios y procesos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-equipo">
+            <div class="contenedor-imagen">
+                <img src="img/equipo.png" alt="Equipo profesional">
+            </div>
+            <div class="contenedor-texto">
+                <h2>Nuestro Equipo</h2>
+                <p>
+                    Contamos con un equipo de profesionales capacitados y comprometidos con la salud animal, 
+                    enfocados en brindar una atención cercana, clara y responsable. Nuestro personal trabaja con vocación 
+                    y dedicación, priorizando siempre el bienestar y la comodidad de cada mascota.
+                </p>
+            </div>
+        </section>
+
+        <section class="seccion-porque-elegirnos">
+            <h2>¿Por Qué Elegir PANA-PETS?</h2>
+            <div class="grid-razones">
+                <div class="razon-card">
+                    <div class="razon-numero">01</div>
+                    <h3>Atención Personalizada</h3>
+                    <p>Cada mascota recibe un trato único y especializado según sus necesidades.</p>
+                </div>
+                <div class="razon-card">
+                    <div class="razon-numero">02</div>
+                    <h3>Servicios Integrales</h3>
+                    <p>Todo lo que tu mascota necesita en un solo lugar.</p>
+                </div>
+                <div class="razon-card">
+                    <div class="razon-numero">03</div>
+                    <h3>Instalaciones Modernas</h3>
+                    <p>Equipamiento de última generación en un ambiente seguro y cómodo.</p>
+                </div>
+                <div class="razon-card">
+                    <div class="razon-numero">04</div>
+                    <h3>Trato Amable y Cercano</h3>
+                    <p>Nos preocupamos por el bienestar de tu mascota y tu tranquilidad.</p>
+                </div>
+                <div class="razon-card">
+                    <div class="razon-numero">05</div>
+                    <h3>Enfoque Preventivo</h3>
+                    <p>Promovemos el cuidado responsable y la prevención de enfermedades.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-compromiso">
+            <div class="compromiso-content">
+                <h2>Nuestro Compromiso</h2>
+                <p>
+                    En PANA-PETS nos comprometemos a cuidar a tu mascota como si fuera parte de nuestra propia familia,
+                    ofreciendo atención confiable, diagnósticos claros y un acompañamiento constante en cada etapa de su vida.
+                </p>
+                <a href="mis-citas.html" class="btn-agendar">Agenda tu Cita</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <h4>📞 Teléfono</h4>
+        <p>+507 6000-0000</p>
+        <h4>📍 Ubicación</h4>
+        <p>Vía Principal, Ciudad de Panamá</p>
+        <p class="pieDePagina">© 2025 PANA-PETS - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+/* Estilos específicos para Sobre Nosotros - PANA-PETS */
+
+.main-sobre-nosotros {
+    background: white;
+}
+
+/* Hero Section */
+.hero-nosotros {
+    background: linear-gradient(135deg, #030f44 0%, #520606 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-nosotros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/fondo3.png') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.95;
+}
+
+/* Sección Quiénes Somos */
+.seccion-quienes-somos {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 6rem 8vw;
+    background: white;
+}
+
+.contenedor-texto h2 {
+    color: #030f44;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.contenedor-texto h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #520606 0%, #667eea 100%);
+    border-radius: 2px;
+}
+
+.contenedor-texto p {
+    color: #555;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.contenedor-imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* Misión y Visión */
+.seccion-mision-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 6rem 8vw;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.mision-card,
+.vision-card {
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.mision-card {
+    background: linear-gradient(135deg, #550101 0%, #6b0202 100%);
+    color: white;
+}
+
+.vision-card {
+    background: linear-gradient(135deg, #030f44 0%, #041356 100%);
+    color: white;
+}
+
+.mision-card:hover,
+.vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.mision-card .icon,
+.vision-card .icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.mision-card h2,
+.vision-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.mision-card p,
+.vision-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* Valores */
+.seccion-valores {
+    padding: 6rem 8vw;
+    background: white;
+}
+
+.seccion-valores h2 {
+    text-align: center;
+    color: #030f44;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.seccion-valores h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #520606 0%, #667eea 100%);
+    border-radius: 2px;
+}
+
+.grid-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.valor-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s;
+}
+
+.valor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-color: #667eea;
+}
+
+.valor-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.valor-card h3 {
+    color: #030f44;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.valor-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Equipo */
+.seccion-equipo {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 6rem 8vw;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Por qué elegirnos */
+.seccion-porque-elegirnos {
+    padding: 6rem 8vw;
+    background: white;
+}
+
+.seccion-porque-elegirnos h2 {
+    text-align: center;
+    color: #030f44;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.seccion-porque-elegirnos h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #520606 0%, #667eea 100%);
+    border-radius: 2px;
+}
+
+.grid-razones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.razon-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    border-left: 5px solid #667eea;
+}
+
+.razon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.razon-numero {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #520606 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.razon-card h3 {
+    color: #030f44;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.razon-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Compromiso */
+.seccion-compromiso {
+    padding: 6rem 8vw;
+    background: linear-gradient(135deg, #030f44 0%, #520606 100%);
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-compromiso::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/fondo4.png') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.compromiso-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.compromiso-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.compromiso-content p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.btn-agendar {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: white;
+    color: #030f44;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.btn-agendar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .seccion-quienes-somos,
+    .seccion-equipo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .seccion-mision-vision {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contenedor-texto h2,
+    .seccion-valores h2,
+    .seccion-porque-elegirnos h2,
+    .compromiso-content h2 {
+        font-size: 2rem;
+    }
+
+    .grid-valores,
+    .grid-razones {
+        grid-template-columns: 1fr;
+    }
+}

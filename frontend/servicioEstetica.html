@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PANA-PETS - Veterinaria en Panamá</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/servicioEstetica.css">
 </head>
 <body>
 
-    <header>
-        <h1>PANA-PETS</h1>
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="img/logo22.png" alt="PANA-PETS Logo" class="logo">
+            <h1>PANA-PETS</h1>
+        </div>
+        
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="sobre-nosotros.html">Nosotros</a></li>
                 <li class="dropdown">
                     <a href="#servicios">Servicios ▾</a>
                     <ul class="submenu">
@@ -23,11 +29,29 @@
                     </ul>
                 </li>
                 <li><a href="mis-citas.html">Mis Citas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#productos">Productos</a></li>
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos-perros.html">Para Perros</a></li>
+                        <li><a href="productos-gatos.html">Para Gatos</a></li>
+                    </ul>
+                </li>
+                
+                <li class="search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar..." id="searchInput">
+                        <button type="button" onclick="realizarBusqueda()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <main>
 
@@ -53,6 +77,9 @@
                             <input type="text" id="nombreMascota" name="nombreMascota" placeholder="Nombre de su mascota" required>
                             <input type="text" id="razonDeConsulta" name="razonDeConsulta" placeholder="Razón de la consulta" required>
                             <textarea name="mensaje" id="mensaje" rows="5" placeholder="Mensaje adicional" required></textarea>
+
+                            <input type="date" id="fechaCita" placeholder="Fecha de la cita" required>
+                            <input type="time" id="horaCita" placeholder="Hora de la cita" required>
 
                             <div class="botones-container">
                                 <button type="button" id="anteriorPaso">Anterior</button>
@@ -94,48 +121,37 @@
             <h1>¿Qué incluye nuestro servicio?</h1>
 
             <div class="servicio-estetica">
-                <img src="img/ServicioDeEstetica.png" alt="Servicio de estética para mascotas">
+                <img src="img/bañoTerapeutico.png" alt="Servicio de estética para mascotas">
                 <h2>Baño terapéutico</h2>
                 <p>con productos especializados según el tipo de piel y pelaje.</p>
             </div>
 
             <div class="servicio-salud">
-                <img src="img/ServicioDeSalud.png" alt="Servicio de vacunación">
+                <img src="img/secado.png" alt="Servicio de vacunación">
                 <h2>Secado profesional</h2>
                 <p>cuidando la piel y evitando humedad excesiva.</p>
                 
             </div>
 
             <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <img src="img/cepillado.png" alt="Consulta veterinaria">
                 <h2>Cepillado profundo</h2>
                 <p>elimina pelo muerto y nudos, reduciendo la caída.</p>
                 
             </div>
             
             <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <img src="img/corte.png" alt="Consulta veterinaria">
                 <h2>Corte de pelo perzonalizado</h2>
                 <p>adaptado a la raza y comodidad de la mascota.</p>
                 
             </div>
-
-            <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
-                <h2>Limpieza de oídos y glándulas</h2>
-                <p>ayudando a prevenir infecciones y molestias.</p>
-            </div>
-
         </section>
-
-
-
-
 
 
         <section class="contactanos">
             <h2>¿Quieres que tu mascota esté en las mejores manos?</h2>
-            <a href="#contacto" class="boton-contacto">Contáctenos</a>
+            <a href="mis-citas.html" class="boton-contacto">Contáctenos</a>
         </section>
 
     </main>

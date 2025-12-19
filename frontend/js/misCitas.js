@@ -1,4 +1,4 @@
-// Funcionalidad para la sección "Mis Citas"
+
 document.addEventListener('DOMContentLoaded', function() {
     const API_URL = 'http://localhost:3000/api/citas';
     const formBuscar = document.getElementById('formBuscarCitas');
@@ -13,7 +13,37 @@ document.addEventListener('DOMContentLoaded', function() {
     let correoActual = '';
     let codigoActual = '';
     
-    // Buscar citas
+    function formatearFechaParaInput(fechaMySQL) {
+        if (!fechaMySQL) return '';
+        
+        const fecha = new Date(fechaMySQL);
+        
+        if (isNaN(fecha.getTime())) {
+            const match = fechaMySQL.match(/(\d{4})-(\d{2})-(\d{2})/);
+            if (match) {
+                return `${match[1]}-${match[2]}-${match[3]}`;
+            }
+            return '';
+        }
+        
+        const año = fecha.getFullYear();
+        const mes = String(fecha.getMonth() + 1).padStart(2, '0');
+        const dia = String(fecha.getDate()).padStart(2, '0');
+        
+        return `${año}-${mes}-${dia}`;
+    }
+    
+    function formatearHoraParaInput(horaMySQL) {
+        if (!horaMySQL) return '';
+        
+        if (typeof horaMySQL === 'string') {
+            const partes = horaMySQL.split(':');
+            return `${partes[0]}:${partes[1]}`;
+        }
+        
+        return horaMySQL;
+    }
+    
     formBuscar.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -42,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Mostrar citas en la interfaz
     function mostrarCitas(citas) {
         listaCitas.innerHTML = '';
         
@@ -60,26 +89,40 @@ document.addEventListener('DOMContentLoaded', function() {
         resultadosCitas.style.display = 'block';
     }
     
-    // Crear tarjeta de cita
     function crearTarjetaCita(cita) {
         const card = document.createElement('div');
         card.className = 'cita-card';
         
-        // Formatear fecha
-        const fecha = new Date(cita.fecha_cita + 'T00:00:00');
-        const fechaFormateada = fecha.toLocaleDateString('es-PA', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+        let fechaFormateada = 'Fecha no disponible';
+        try {
+            const fechaStr = formatearFechaParaInput(cita.fecha_cita);
+            const fecha = new Date(fechaStr + 'T00:00:00');
+            
+            if (!isNaN(fecha.getTime())) {
+                fechaFormateada = fecha.toLocaleDateString('es-PA', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+        } catch (error) {
+            console.error('Error al formatear fecha:', error);
+        }
         
-        // Formatear hora
-        const [hora, minutos] = cita.hora_cita.split(':');
-        const horaNum = parseInt(hora);
-        const ampm = horaNum >= 12 ? 'PM' : 'AM';
-        const hora12 = horaNum % 12 || 12;
-        const horaFormateada = `${hora12}:${minutos} ${ampm}`;
+        let horaFormateada = 'Hora no disponible';
+        try {
+            const horaStr = formatearHoraParaInput(cita.hora_cita);
+            if (horaStr) {
+                const [hora, minutos] = horaStr.split(':');
+                const horaNum = parseInt(hora);
+                const ampm = horaNum >= 12 ? 'PM' : 'AM';
+                const hora12 = horaNum % 12 || 12;
+                horaFormateada = `${hora12}:${minutos} ${ampm}`;
+            }
+        } catch (error) {
+            console.error('Error al formatear hora:', error);
+        }
         
         card.innerHTML = `
             <div class="cita-header">
@@ -90,34 +133,34 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="cita-info">
                 <div class="cita-campo">
                     <label>Mascota:</label>
-                    <span>${cita.nombre_mascota}</span>
+                    <span>${cita.nombre_mascota || 'N/A'}</span>
                 </div>
                 <div class="cita-campo">
                     <label>Tipo de Animal:</label>
-                    <span>${cita.tipo_animal}</span>
+                    <span>${cita.tipo_animal || 'N/A'}</span>
                 </div>
                 <div class="cita-campo">
                     <label>Razón:</label>
-                    <span>${cita.razon_consulta}</span>
+                    <span>${cita.razon_consulta || 'N/A'}</span>
                 </div>
                 <div class="cita-campo">
                     <label>Servicio:</label>
-                    <span>${cita.descripcion}</span>
+                    <span>${cita.descripcion || 'N/A'}</span>
                 </div>
             </div>
             
             <div class="cita-fecha-hora">
-                <h4>📅 ${fechaFormateada}</h4>
-                <p>🕒 ${horaFormateada}</p>
+                <h4>${fechaFormateada}</h4>
+                <p>${horaFormateada}</p>
             </div>
             
             ${cita.estado !== 'cancelada' ? `
             <div class="cita-acciones">
                 <button class="btn-editar" onclick="editarCita(${cita.id})">
-                    ✏️ Editar
+                    Editar
                 </button>
                 <button class="btn-cancelar" onclick="cancelarCita(${cita.id})">
-                    ❌ Cancelar
+                    Cancelar
                 </button>
             </div>
             ` : ''}
@@ -125,36 +168,68 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return card;
     }
-    
-    // Editar cita
+
     window.editarCita = function(id) {
         const cita = citasActuales.find(c => c.id === id);
-        if (!cita) return;
+        if (!cita) {
+            alert('Cita no encontrada');
+            return;
+        }
+        
+        console.log('Editando cita:', cita);
         
         document.getElementById('editarId').value = cita.id;
-        document.getElementById('editarTipoAnimal').value = cita.tipo_animal;
-        document.getElementById('editarNombreMascota').value = cita.nombre_mascota;
-        document.getElementById('editarRazonConsulta').value = cita.razon_consulta;
-        document.getElementById('editarMensaje').value = cita.mensaje;
-        document.getElementById('editarFechaCita').value = cita.fecha_cita;
-        document.getElementById('editarHoraCita').value = cita.hora_cita;
+        document.getElementById('editarTipoAnimal').value = cita.tipo_animal || '';
+        document.getElementById('editarNombreMascota').value = cita.nombre_mascota || '';
+        document.getElementById('editarRazonConsulta').value = cita.razon_consulta || '';
+        document.getElementById('editarMensaje').value = cita.mensaje || '';
+        
+        const fechaFormateada = formatearFechaParaInput(cita.fecha_cita);
+        const horaFormateada = formatearHoraParaInput(cita.hora_cita);
+        
+        console.log('Fecha formateada:', fechaFormateada);
+        console.log('Hora formateada:', horaFormateada);
+        
+        document.getElementById('editarFechaCita').value = fechaFormateada;
+        document.getElementById('editarHoraCita').value = horaFormateada;
+        
+        const hoy = new Date();
+        const fechaMinima = hoy.toISOString().split('T')[0];
+        document.getElementById('editarFechaCita').setAttribute('min', fechaMinima);
+        
+        document.getElementById('editarHoraCita').setAttribute('min', '08:00');
+        document.getElementById('editarHoraCita').setAttribute('max', '17:00');
         
         modal.style.display = 'block';
     };
     
-    // Guardar cambios de edición
     formEditar.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const id = document.getElementById('editarId').value;
+        const fechaCita = document.getElementById('editarFechaCita').value;
+        const horaCita = document.getElementById('editarHoraCita').value;
+        
+        if (!fechaCita) {
+            alert('Por favor, seleccione una fecha válida.');
+            return;
+        }
+        
+        if (!horaCita) {
+            alert('Por favor, seleccione una hora válida.');
+            return;
+        }
+        
         const datosActualizados = {
             tipo_animal: document.getElementById('editarTipoAnimal').value,
             nombre_mascota: document.getElementById('editarNombreMascota').value,
             razon_consulta: document.getElementById('editarRazonConsulta').value,
             mensaje: document.getElementById('editarMensaje').value,
-            fecha_cita: document.getElementById('editarFechaCita').value,
-            hora_cita: document.getElementById('editarHoraCita').value
+            fecha_cita: fechaCita,
+            hora_cita: horaCita
         };
+        
+        console.log('Datos a actualizar:', datosActualizados);
         
         try {
             const response = await fetch(`${API_URL}/${id}`, {
@@ -171,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('¡Cita actualizada exitosamente!');
                 modal.style.display = 'none';
                 
-                // Recargar citas
                 formBuscar.dispatchEvent(new Event('submit'));
             } else {
                 alert('Error al actualizar la cita: ' + (data.error || 'Error desconocido'));
@@ -182,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Cancelar cita
     window.cancelarCita = async function(id) {
         if (!confirm('¿Está seguro de que desea cancelar esta cita?')) {
             return;
@@ -198,7 +271,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok && data.success) {
                 alert('Cita cancelada exitosamente.');
                 
-                // Recargar citas
                 formBuscar.dispatchEvent(new Event('submit'));
             } else {
                 alert('Error al cancelar la cita: ' + (data.error || 'Error desconocido'));
@@ -209,7 +281,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Cerrar modal
     closeModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });

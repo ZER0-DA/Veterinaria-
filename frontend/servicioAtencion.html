@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PANA-PETS - Veterinaria en Panamá</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/servicioAtencion.css">
 </head>
 <body>
 
-    <header>
-        <h1>PANA-PETS</h1>
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="img/logo22.png" alt="PANA-PETS Logo" class="logo">
+            <h1>PANA-PETS</h1>
+        </div>
+        
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="sobre-nosotros.html">Nosotros</a></li>
                 <li class="dropdown">
                     <a href="#servicios">Servicios ▾</a>
                     <ul class="submenu">
@@ -23,11 +29,29 @@
                     </ul>
                 </li>
                 <li><a href="mis-citas.html">Mis Citas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#productos">Productos</a></li>
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos-perros.html">Para Perros</a></li>
+                        <li><a href="productos-gatos.html">Para Gatos</a></li>
+                    </ul>
+                </li>
+                
+                <li class="search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar..." id="searchInput">
+                        <button type="button" onclick="realizarBusqueda()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <main>
 
@@ -54,6 +78,9 @@
                             <input type="text" id="razonDeConsulta" name="razonDeConsulta" placeholder="Razón de la consulta" required>
                             <textarea name="mensaje" id="mensaje" rows="5" placeholder="Mensaje adicional" required></textarea>
 
+                            <input type="date" id="fechaCita" placeholder="Fecha de la cita" required>
+                            <input type="time" id="horaCita" placeholder="Hora de la cita" required>
+
                             <div class="botones-container">
                                 <button type="button" id="anteriorPaso">Anterior</button>
                                 <button type="submit" id="btnConfirmar">Confirmar Cita</button>
@@ -79,7 +106,7 @@
             </div>
             
             <div>
-                <img src="img/baño2.png" alt="Servicio de estética canina y felina premium">
+                <img src="img/consulta5.png" alt="Servicio de estética canina y felina premium">
             </div>
         </section>
 
@@ -87,48 +114,42 @@
             <h1>¿Qué incluye nuestro servicio?</h1>
 
             <div class="servicio-estetica">
-                <img src="img/ServicioDeEstetica.png" alt="Servicio de estética para mascotas">
+                <img src="img/examenFisico.png" alt="Servicio de estética para mascotas">
                 <h2>Examen físico completo</h2>
                 <p>Evaluación detallada del estado general de la mascota para detectar signos tempranos de enfermedad.</p>
             </div>
 
             <div class="servicio-salud">
-                <img src="img/ServicioDeSalud.png" alt="Servicio de vacunación">
+                <img src="img/evaluacionGen.png" alt="Servicio de vacunación">
                 <h2>Evaluación de salud general</h2>
                 <p>Revisión del peso, condición corporal, piel, pelaje y funciones básicas.</p>
                 
             </div>
 
             <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <img src="img/asesoramiento.png" alt="Consulta veterinaria">
                 <h2>Asesoramiento nutricional</h2>
                 <p>Recomendaciones alimenticias adaptadas a la edad, raza y necesidades específicas.</p>
                 
             </div>
             
             <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <img src="img/comportamiento.png" alt="Consulta veterinaria">
                 <h2>Orientación en comportamiento</h2>
                 <p>Consejos para mejorar hábitos, manejo y bienestar emocional de la mascota.</p>
                 
             </div>
 
             <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <img src="img/diagnostico.png" alt="Consulta veterinaria">
                 <h2>Diagnóstico inicial</h2>
                 <p>Identificación preliminar de posibles problemas de salud mediante evaluación clínica.</p>
             </div>
 
             <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
+                <img src="img/plan.png" alt="Consulta veterinaria">
                 <h2>Plan de tratamiento detallado</h2>
                 <p>Indicaciones claras sobre cuidados, medicación o pasos a seguir.</p>
-            </div>
-
-            <div class="servicio-atencion">
-                <img src="img/ServicioDeAtencion.png" alt="Consulta veterinaria">
-                <h2>Recomendaciones de seguimiento</h2>
-                <p>Orientación para controles futuros y prevención de enfermedades.</p>
             </div>
 
         </section>
@@ -137,7 +158,7 @@
 
         <section class="contactanos">
             <h2>¿Quieres que tu mascota esté en las mejores manos?</h2>
-            <a href="#contacto" class="boton-contacto">Contáctenos</a>
+            <a href="mis-citas.html" class="boton-contacto">Contáctenos</a>
         </section>
 
     </main>

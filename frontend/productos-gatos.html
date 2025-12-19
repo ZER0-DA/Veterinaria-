@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANA-PETS - Productos para Gatos</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/productos-gatos.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-title">
+            <img src="img/logo22.png" alt="PANA-PETS Logo" class="logo">
+            <h1>PANA-PETS</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios ▾</a>
+                    <ul class="submenu">
+                        <li><a href="servicioAtencion.html">Consulta Veterinaria</a></li>
+                        <li><a href="servicioEstetica.html">Estética Canina y Felina</a></li>
+                        <li><a href="servicioSalud.html">Programa de Inmunización</a></li>
+                    </ul>
+                </li>
+                <li><a href="mis-citas.html">Mis Citas</a></li>
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos-perros.html">Para Perros</a></li>
+                        <li><a href="productos-gatos.html">Para Gatos</a></li>
+                    </ul>
+                </li>
+            
+                <li class="search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar..." id="searchInput">
+                        <button type="button" onclick="realizarBusqueda()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="main-productos-gatos">
+        <section class="hero-productos">
+            <div class="hero-content">
+                <h1>Productos para Gatos</h1>
+                <p>Todo lo que tu felino necesita para una vida saludable y feliz</p>
+            </div>
+        </section>
+
+        <section class="categorias-gatos">
+            <h2>Explora Nuestras Categorías</h2>
+            <div class="grid-categorias">
+                <div class="categoria-card" onclick="filtrarCategoria('alimento')">
+                    <span class="categoria-icon">🍗</span>
+                    <h3>Alimento</h3>
+                </div>
+                <div class="categoria-card" onclick="filtrarCategoria('arena')">
+                    <span class="categoria-icon">🏖️</span>
+                    <h3>Arena y Sanitarios</h3>
+                </div>
+                <div class="categoria-card" onclick="filtrarCategoria('juguetes')">
+                    <span class="categoria-icon">🎾</span>
+                    <h3>Juguetes</h3>
+                </div>
+                <div class="categoria-card" onclick="filtrarCategoria('cuidado')">
+                    <span class="categoria-icon">💅</span>
+                    <h3>Cuidado e Higiene</h3>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" data-categoria="alimento">
+            <div class="titulo-seccion">
+                <h2>Alimento Premium</h2>
+                <p>Nutrición balanceada para tu gato</p>
+            </div>
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-popular">Popular</span>
+                        <img src="img/alimento" alt="Alimento Premium">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Alimento Premium para Gatos Adultos</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Fórmula balanceada con pollo y arroz</li>
+                            <li>✓ Rico en proteínas y nutrientes esenciales</li>
+                            <li>✓ Presentación de 3kg</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$35.00</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-nuevo">Nuevo</span>
+                        <img src="img/salmon" alt="Alimento Húmedo">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Alimento Húmedo de Salmón</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Paté gourmet de salmón natural</li>
+                            <li>✓ Alto en Omega-3 para pelaje brillante</li>
+                            <li>✓ Pack de 12 latas</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$28.50</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/snak" alt="Snacks">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Snacks de Carne para Gatos</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Premios saludables de carne deshidratada</li>
+                            <li>✓ Perfectos para entrenar y recompensar</li>
+                            <li>✓ Bolsa de 200g</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$8.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" data-categoria="arena">
+            <div class="titulo-seccion">
+                <h2>Arena y Sanitarios</h2>
+                <p>Higiene y comodidad para tu felino</p>
+            </div>
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-popular">Popular</span>
+                        <img src="img/arena.png" alt="Arena Aglomerante">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Arena Aglomerante Premium</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Control superior de olores</li>
+                            <li>✓ Fácil limpieza y bajo polvo</li>
+                            <li>✓ Saco de 10kg</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$22.00</span>
+                        </div>
+            
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/cajaGatos" alt="Caja Sanitaria">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Caja Sanitaria Cubierta</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Bandeja con tapa y filtro de carbón</li>
+                            <li>✓ Mayor privacidad y control de olores</li>
+                            <li>✓ Incluye pala</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$45.00</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-nuevo">Eco</span>
+                        <img src="img/arenaBiodegra" alt="Arena Biodegradable">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Arena Biodegradable</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ 100% natural de maíz</li>
+                            <li>✓ Ecológica y segura</li>
+                            <li>✓ Saco de 8kg con aroma fresco</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$26.50</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" data-categoria="juguetes">
+            <div class="titulo-seccion">
+                <h2>Juguetes Divertidos</h2>
+                <p>Estimula el instinto cazador de tu gato</p>
+            </div>
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/juguete" alt="Pelotas">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Set de Pelotas con Cascabel</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Pack de 6 pelotas coloridas con sonido</li>
+                            <li>✓ Estimulan el instinto cazador</li>
+                            <li>✓ Material seguro y resistente</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$12.00</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-popular">Popular</span>
+                        <img src="img/plumita" alt="Varita con Plumas">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Varita con Plumas</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Juguete interactivo con plumas naturales</li>
+                            <li>✓ Perfecto para ejercicio y vínculo</li>
+                            <li>✓ Extensible hasta 1 metro</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$9.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/raton" alt="Ratones">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Ratones de Juguete (Pack 10)</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Ratoncitos con catnip</li>
+                            <li>✓ Tamaño perfecto para cazar</li>
+                            <li>✓ Colores variados y textura suave</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$14.50</span>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-productos" data-categoria="cuidado">
+            <div class="titulo-seccion">
+                <h2>Cuidado e Higiene</h2>
+                <p>Todo para el bienestar de tu gato</p>
+            </div>
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/shampo44" alt="Shampoo">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Shampoo Hipoalergénico</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Fórmula suave para piel sensible</li>
+                            <li>✓ pH balanceado</li>
+                            <li>✓ Botella de 500ml con aroma delicado</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$16.00</span>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="img/cortaUñas22" alt="Cortauñas">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cortauñas Profesional</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Diseño ergonómico con protector</li>
+                            <li>✓ Corte preciso y seguro</li>
+                            <li>✓ Acero inoxidable de alta calidad</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$11.99</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-popular">Popular</span>
+                        <img src="img/cepillo11" alt="Cepillo">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cepillo Anti-Bolas de Pelo</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Elimina el 90% del pelo suelto</li>
+                            <li>✓ Cerdas suaves que no irritan</li>
+                            <li>✓ Mango antideslizante ergonómico</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$13.50</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <span class="badge-nuevo">Nuevo</span>
+                        <img src="img/dientes.jpg" alt="Kit Dental">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Kit de Higiene Dental</h3>
+                        <ul class="caracteristicas">
+                            <li>✓ Incluye pasta y cepillo especial</li>
+                            <li>✓ Previene sarro y mal aliento</li>
+                            <li>✓ Sabor a pollo que les encanta</li>
+                        </ul>
+                        <div class="precio-container">
+                            <span class="precio">$18.00</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-productos">
+            <div class="cta-content">
+                <h2>¿Necesitas más información?</h2>
+                <p>Contáctanos y te ayudaremos a elegir los mejores productos para tu gato</p>
+                <a href="mis-citas.html" class="btn-contacto">Contáctanos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h4>📞 Teléfono</h4>
+        <p>+507 6000-0000</p>
+        <h4>📍 Ubicación</h4>
+        <p>Vía Principal, Ciudad de Panamá</p>
+        <p class="pieDePagina">© 2025 PANA-PETS - Todos los derechos reservados</p>
+    </footer>
+
+
+
+</body>
+</html>

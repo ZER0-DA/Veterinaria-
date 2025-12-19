@@ -1,4 +1,4 @@
-/* Reset y configuración general */
+
 * {
     margin: 0;
     padding: 0;
@@ -419,5 +419,96 @@ footer p {
     .botones-container {
         grid-template-columns: 1fr;
         gap: 0.8rem;
+    }
+}
+
+/* Agregar estos estilos CSS al final de tu archivo css/index.css */
+
+/* Contenedor del header */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo y título */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    background: white;
+    padding: 5px;
+}
+
+/* Barra de búsqueda */
+.search-item {
+    margin-left: auto;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    padding: 0.3rem 0.8rem;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.search-container:focus-within {
+    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+    transform: scale(1.02);
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 0.4rem 0.6rem;
+    width: 100%;
+    font-size: 0.9rem;
+    background: transparent;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.search-container button:hover {
+    transform: scale(1.15);
+}
+
+/* Responsive adicional */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .search-item {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .search-container {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
